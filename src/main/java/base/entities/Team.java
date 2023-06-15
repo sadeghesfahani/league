@@ -1,11 +1,16 @@
 package base.entities;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 
 @Entity
+@Setter
+@Getter
 public class Team extends BaseEntity<Long> {
     private final String CITY_ID = "city_id";
 
@@ -20,4 +25,8 @@ public class Team extends BaseEntity<Long> {
     @OneToOne(mappedBy = "coach", cascade = CascadeType.ALL, orphanRemoval = true)
     private Coach coach;
 
+
+    public Coach getCoach() {
+        return coach;
+    }
 }
