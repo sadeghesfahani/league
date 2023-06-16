@@ -26,7 +26,4 @@ public class Team extends BaseEntity<Long> {
     private Coach coach;
 
 
-    public Coach getCoach() {
-        return coach;
-    }
 }
